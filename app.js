@@ -50,6 +50,13 @@ document.addEventListener('DOMContentLoaded', () => {
       isValid = false;
     }
 
+    // Optional: Check Turnstile token if enabled
+    const turnstileToken = document.querySelector('[name="cf-turnstile-response"]')?.value;
+    if (document.querySelector('.cf-turnstile') && !turnstileToken) {
+      formNote.textContent = 'Please complete the security check.';
+      isValid = false;
+    }
+
     if (!isValid) return;
 
     // Generate unique Registration ID
@@ -113,3 +120,14 @@ document.addEventListener('DOMContentLoaded', () => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
 });
+
+// Cloudflare Turnstile Callback Handlers
+window.onTurnstileSuccess = function(token) {
+  const formNote = document.getElementById('formNote');
+  if (formNote) formNote.textContent = '';
+};
+
+window.onTurnstileExpired = function() {
+  const formNote = document.getElementById('formNote');
+  if (formNote) formNote.textContent = 'Security check expired. Please complete it again.';
+};
