@@ -1,4 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap');
+
+/* Fonts Definition */
+@font-face {
+  font-family: 'Protipo';
+  src: url('./fonts/PNP Font - Protipo/Protipo-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Protipo';
+  src: url('./fonts/PNP Font - Protipo/Protipo-Italic.otf') format('opentype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Protipo';
+  src: url('./fonts/PNP Font - Protipo/Protipo-Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Protipo';
+  src: url('./fonts/PNP Font - Protipo/Protipo-SemiboldItalic.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Protipo';
+  src: url('./fonts/PNP Font - Protipo/Protipo-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Protipo';
+  src: url('./fonts/PNP Font - Protipo/Protipo-BoldItalic.otf') format('opentype');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
 
 :root{
   --navy:#12233F;
@@ -23,7 +71,7 @@ body{
   background-image:
     radial-gradient(circle at 12% 8%, rgba(27,111,174,0.08), transparent 40%),
     radial-gradient(circle at 88% 92%, rgba(143,199,234,0.10), transparent 45%);
-  font-family:'Inter',sans-serif;
+  font-family:'Nexa';
   color:var(--ink);
   display:flex;
   justify-content:center;
@@ -103,7 +151,6 @@ p {
 }
 
 h1{
-  font-family:'Space Grotesk',sans-serif;
   font-size:28px;
   font-weight:700;
   margin:0 0 8px;
@@ -125,7 +172,6 @@ h1{
 .group:first-of-type{border-top:none; padding-top:0;}
 
 .group-label{
-  font-family:'IBM Plex Mono',monospace;
   font-size:11px;
   letter-spacing:.08em;
   text-transform:uppercase;
@@ -168,7 +214,7 @@ input[type="tel"]{
   border:1px solid var(--line);
   border-radius:9px;
   font-size:15px;
-  font-family:inherit;
+  font-family:'Nexa';
   color:var(--ink);
   background:var(--surface);
   transition:border-color .15s ease, box-shadow .15s ease;
@@ -217,7 +263,7 @@ button[type="submit"]{
   border-radius:9px;
   background:var(--block-gradient);
   color:#fff;
-  font-family:'Space Grotesk',sans-serif;
+  font-family:'Nexa';
   font-size:15px;
   font-weight:600;
   cursor:pointer;
@@ -241,14 +287,14 @@ button[type="submit"]:disabled{opacity:.6; cursor:not-allowed;}
 }
 .success .mark{justify-content:center;}
 .success h2{
-  font-family:'Space Grotesk',sans-serif;
+  font-family:'Nexa';
   font-size:24px;
   color:var(--navy);
   margin:10px 0 8px;
 }
 .success p{color:var(--muted); margin:6px 0; font-size:15px; text-align:center;}
 .ticket-id{
-  font-family:'IBM Plex Mono',monospace;
+  font-family:'Nexa';
   font-size:14px;
   font-weight:600;
   color:var(--blue);
