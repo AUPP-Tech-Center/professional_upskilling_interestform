@@ -85,13 +85,13 @@
         <div class="row">
           <div class="field">
             <label for="firstname">First Name <span class="required-star">*</span></label>
-            <input id="firstname" name="firstname" type="text" autocomplete="given-name" required placeholder="e.g. Sokha">
+            <input id="firstname" name="firstname" type="text" autocomplete="given-name" maxlength="50" required placeholder="e.g. Sokha">
             <span class="field-error" id="err-firstname">First name is required.</span>
           </div>
 
           <div class="field">
             <label for="lastname">Last Name <span class="required-star">*</span></label>
-            <input id="lastname" name="lastname" type="text" autocomplete="family-name" required placeholder="e.g. Chan">
+            <input id="lastname" name="lastname" type="text" autocomplete="family-name" maxlength="50" required placeholder="e.g. Chan">
             <span class="field-error" id="err-lastname">Last name is required.</span>
           </div>
         </div>
@@ -99,19 +99,19 @@
         <div class="row">
           <div class="field">
             <label for="email">Email <span class="required-star">*</span></label>
-            <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@organization.com">
+            <input id="email" name="email" type="email" autocomplete="email" maxlength="100" required placeholder="you@organization.com">
             <span class="field-error" id="err-email">Please enter a valid email address.</span>
           </div>
           <div class="field">
             <label for="phone">Phone <span class="optional">(Optional)</span></label>
-            <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+855 12 345 678">
+            <input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="25" placeholder="+855 12 345 678">
           </div>
         </div>
 
         <div class="row single-col">
           <div class="field">
             <label for="tele">Telegram number or username <span class="required-star">*</span></label>
-            <input id="tele" name="tele" type="text" required placeholder="@username or phone number">
+            <input id="tele" name="tele" type="text" maxlength="50" required placeholder="@username or phone number">
             <span class="field-error" id="err-tele">Telegram number or username is required.</span>
           </div>
         </div>
@@ -124,11 +124,11 @@
         <div class="row">
           <div class="field">
             <label for="company">Company/Organization <span class="optional">(Optional)</span></label>
-            <input id="company" name="company" type="text" autocomplete="organization" placeholder="Company or Ministry">
+            <input id="company" name="company" type="text" autocomplete="organization" maxlength="100" placeholder="Company or Ministry">
           </div>
           <div class="field">
             <label for="job_title">Job title <span class="required-star">*</span></label>
-            <input id="job_title" name="job_title" type="text" autocomplete="organization-title" required placeholder="e.g. Managing Director">
+            <input id="job_title" name="job_title" type="text" autocomplete="organization-title" maxlength="100" required placeholder="e.g. Managing Director">
             <span class="field-error" id="err-job_title">Job title is required.</span>
           </div>
         </div>
@@ -136,7 +136,7 @@
         <div class="row single-col">
           <div class="field">
             <label for="linkedin">LinkedIn <span class="optional">(Optional)</span></label>
-            <input id="linkedin" name="linkedin" type="text" placeholder="https://linkedin.com/in/username">
+            <input id="linkedin" name="linkedin" type="text" maxlength="150" placeholder="https://linkedin.com/in/username">
           </div>
         </div>
       </section>
@@ -149,13 +149,16 @@
           <div class="radio-group">
             <label class="radio-option selected" id="opt-telegram">
               <input type="radio" id="platform-telegram" name="platform" value="telegram" checked required>
-              <span class="radio-icon">✈</span>
+              <span class="telegram-icon-mask radio-icon" aria-hidden="true"></span>
               <span>Telegram</span>
             </label>
 
             <label class="radio-option" id="opt-email">
               <input type="radio" id="platform-email" name="platform" value="email">
-              <span class="radio-icon">✉</span>
+              <svg class="email-icon radio-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="4" width="20" height="16" rx="4"></rect>
+                <path d="M22 7l-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </svg>
               <span>Email</span>
             </label>
           </div>

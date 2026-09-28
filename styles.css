@@ -445,6 +445,30 @@ input:user-valid:not(:placeholder-shown) {
 
 .radio-icon {
   font-size: 0.9375rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.telegram-icon-mask {
+  width: 18px;
+  height: 18px;
+  background-color: currentColor;
+  -webkit-mask: url('assets/telegram-icon.png') no-repeat center / contain;
+  mask: url('assets/telegram-icon.png') no-repeat center / contain;
+  display: inline-block;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease;
+}
+
+.email-icon {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  flex-shrink: 0;
+  vertical-align: middle;
+  transition: stroke 0.2s ease, color 0.2s ease;
 }
 
 /* 10. Confirmation & Checkbox */
