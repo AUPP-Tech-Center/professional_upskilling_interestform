@@ -132,7 +132,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Prepare FormData payload (matches Google Sheet columns)
     const formData = new FormData(form);
     formData.append('registration_id', regId);
-    formData.append('submitted_at', new Date().toLocaleString());
+
+    // Timestamp locked to local Cambodia Time (Asia/Phnom_Penh, UTC+7) regardless of applicant's timezone
+    const cambodiaTime = new Date().toLocaleString('en-US', {
+      timeZone: 'Asia/Phnom_Penh'
+    });
+    formData.append('submitted_at', cambodiaTime);
 
     // Submit button state
     submitBtn.disabled = true;
