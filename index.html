@@ -6,8 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="AUPP Technology Center — Professional Upskilling Interest Form.">
   <title>Professional Upskilling | Interest Form</title>
+
+  <!-- Typography: Nexa Local + Plus Jakarta Sans Fallback -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/png" href="assets/atc.png">
+
+  <!-- Cloudflare Turnstile API -->
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 
@@ -19,143 +27,172 @@
       <div class="logo-container">
         <img src="assets/logo/ATC_Primary_1.png" alt="AUPP Technology Center Logo">
       </div>
+
       <h1>Interest Form - Professional Upskilling</h1>
 
-      <h3>Overview:</h3>
-      <p class="sub"> Professional Upskilling is an intensive, 2–3 day executive professional development workshop
-        tailored for business leaders, entrepreneurs, and enterprise teams. Moving away from traditional academic
-        theory, these high-impact programmes focus on practical application, real-world case studies, and actionable
-        frameworks that can be immediately implemented. The curriculum is specifically designed around Cambodia's
-        evolving market and regional growth.
+      <div class="info-block">
+        <h3>Overview:</h3>
+        <p class="sub">
+          Professional Upskilling is an intensive, 2–3 day executive professional development workshop
+          tailored for business leaders, entrepreneurs, and enterprise teams. Moving away from traditional academic
+          theory, these high-impact programmes focus on practical application, real-world case studies, and actionable
+          frameworks that can be immediately implemented. The curriculum is specifically designed around Cambodia's
+          evolving market and regional growth.
+        </p>
+      </div>
+
+      <div class="info-block">
+        <h3>Objective:</h3>
+        <ul class="sub objective-list">
+          <li>Lead digital &amp; AI transformation</li>
+          <li>Make investment-grade decisions</li>
+          <li>Expand into new markets</li>
+          <li>Deliver operational excellence</li>
+        </ul>
+      </div>
+
+      <p class="notice-line">
+        <strong><small><em>By submitting this form, you will receive information about our upcoming Professional Upskilling courses.</em></small></strong>
       </p>
 
-      <h3>Objective:</h3>
-      <ul class="sub">
-        <li>Lead digital & AI transformation</li>
-        <li>Make investment-grade decisions</li>
-        <li>Expand into new markets </li>
-        <li>Deliver operational excellence </li>
-      </ul>
+      <div class="info-block contacts-block">
+        <h3>Contact information:</h3>
 
-      <p><strong><small><em>By submitting this form, you will receive information about our upcoming Professional Upskilling courses.</em></small></strong></p>
+        <div class="contact-card">
+          <h5>Sourpheara SUNVISA - Startup Business Development Officer</h5>
+          <ul class="sub">
+            <li>Email: <a href="mailto:s.sunvisa@aupptechcenter.com">s.sunvisa@aupptechcenter.com</a></li>
+            <li>Phone: <a href="tel:+85517633888">017 633 888</a></li>
+          </ul>
+        </div>
 
-      <h3>Contact information:</h3>
-      <h5>Sourpheara SUNVISA - Startup Business Development Officer
-         <ul class="sub">
-           <li>Email: <a href="mailto:s.sunvisa@aupptechcenter.com">s.sunvisa@aupptechcenter.com</a></li>
-           <li>Phone: <a href="tel:+85517633888">017 633 888</a></li>
-         </ul>
-      </h5>
-      
-      <h5>Molinna EL - Junior Associate, Business Development Team
-         <ul class="sub">
-           <li><a href="mailto:molinna.el@aupptechcenter.com">molinna.el@aupptechcenter.com</a></li>
-           <li>Phone: <a href="tel:+85515836896">015 836 896</a></li>
-         </ul>
-      </h5>
-
+        <div class="contact-card">
+          <h5>Molinna EL - Junior Associate, Business Development Team</h5>
+          <ul class="sub">
+            <li>Email: <a href="mailto:molinna.el@aupptechcenter.com">molinna.el@aupptechcenter.com</a></li>
+            <li>Phone: <a href="tel:+85515836896">015 836 896</a></li>
+          </ul>
+        </div>
+      </div>
     </header>
 
     <form id="regForm" novalidate>
 
+      <!-- Section: Contact -->
       <section class="group">
         <p class="group-label">Contact</p>
 
         <div class="row">
           <div class="field">
-            <label for="firstname">First Name</label>
-            <input id="firstname" name="firstname" type="text" autocomplete="given-name" required>
-            <span class="field-error" id="err-firstname"></span>
+            <label for="firstname">First Name <span class="required-star">*</span></label>
+            <input id="firstname" name="firstname" type="text" autocomplete="given-name" required placeholder="e.g. Sokha">
+            <span class="field-error" id="err-firstname">First name is required.</span>
           </div>
 
           <div class="field">
-            <label for="lastname">Last Name</label>
-            <input id="lastname" name="lastname" type="text" autocomplete="family-name" required>
-            <span class="field-error" id="err-lastname"></span>
+            <label for="lastname">Last Name <span class="required-star">*</span></label>
+            <input id="lastname" name="lastname" type="text" autocomplete="family-name" required placeholder="e.g. Chan">
+            <span class="field-error" id="err-lastname">Last name is required.</span>
           </div>
         </div>
 
         <div class="row">
           <div class="field">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" autocomplete="email" required>
-            <span class="field-error" id="err-email"></span>
+            <label for="email">Email <span class="required-star">*</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@organization.com">
+            <span class="field-error" id="err-email">Please enter a valid email address.</span>
           </div>
           <div class="field">
-            <label for="phone">Phone</label>
-            <input id="phone" name="phone" type="tel" autocomplete="tel">
+            <label for="phone">Phone <span class="optional">(Optional)</span></label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+855 12 345 678">
           </div>
         </div>
 
-        <div class="row">
+        <div class="row single-col">
           <div class="field">
-            <label for="tele">Telegram number or username</label>
-            <input id="tele" name="tele" type="text" required>
-            <span class="field-error" id="err-tele"></span>
+            <label for="tele">Telegram number or username <span class="required-star">*</span></label>
+            <input id="tele" name="tele" type="text" required placeholder="@username or phone number">
+            <span class="field-error" id="err-tele">Telegram number or username is required.</span>
           </div>
         </div>
-
       </section>
 
+      <!-- Section: Professional -->
       <section class="group">
         <p class="group-label">Professional</p>
 
         <div class="row">
           <div class="field">
-            <label for="company">Company/Organization</label>
-            <input id="company" name="company" type="text" autocomplete="organization">
+            <label for="company">Company/Organization <span class="optional">(Optional)</span></label>
+            <input id="company" name="company" type="text" autocomplete="organization" placeholder="Company or Ministry">
           </div>
           <div class="field">
-            <label for="job_title">Job title</label>
-            <input id="job_title" name="job_title" type="text" autocomplete="organization-title" required>
-            <span class="field-error" id="err-job_title"></span>
+            <label for="job_title">Job title <span class="required-star">*</span></label>
+            <input id="job_title" name="job_title" type="text" autocomplete="organization-title" required placeholder="e.g. Managing Director">
+            <span class="field-error" id="err-job_title">Job title is required.</span>
           </div>
         </div>
 
-        <div class="row">
+        <div class="row single-col">
           <div class="field">
             <label for="linkedin">LinkedIn <span class="optional">(Optional)</span></label>
-            <input id="linkedin" name="linkedin" type="text">
+            <input id="linkedin" name="linkedin" type="text" placeholder="https://linkedin.com/in/username">
           </div>
         </div>
       </section>
 
+      <!-- Section: Preferred Platform -->
       <section class="group">
         <div class="field">
-          <label>Preferred Platform to Receive Information</label>
+          <label>Preferred Platform to Receive Information <span class="required-star">*</span></label>
 
           <div class="radio-group">
-            <div class="radio-option">
-              <input type="radio" id="platform-telegram" name="platform" value="telegram" required>
-              <label for="platform-telegram">Telegram</label>
-            </div>
+            <label class="radio-option selected" id="opt-telegram">
+              <input type="radio" id="platform-telegram" name="platform" value="telegram" checked required>
+              <span class="radio-icon">✈</span>
+              <span>Telegram</span>
+            </label>
 
-            <div class="radio-option">
+            <label class="radio-option" id="opt-email">
               <input type="radio" id="platform-email" name="platform" value="email">
-              <label for="platform-email">Email</label>
-            </div>
+              <span class="radio-icon">✉</span>
+              <span>Email</span>
+            </label>
           </div>
-
         </div>
       </section>
 
+      <!-- Section: Confirmation & Submit -->
       <section class="group group-confirm">
         <label class="checkbox">
-          <input type="checkbox" id="agree" required>
+          <input type="checkbox" id="agree" name="agree" required>
           <span>I agree to the terms and conditions.</span>
         </label>
-        <span class="field-error" id="err-agree"></span>
+        <span class="field-error" id="err-agree">You must agree to the terms and conditions.</span>
 
-        <!-- Cloudflare Turnstile — replace data-sitekey when ready -->
-        <div class="cf-turnstile" data-sitekey="0x4AAAAAAD3oMjybecldeQb7" data-callback="onTurnstileSuccess"
-          data-expired-callback="onTurnstileExpired"></div>
+        <!-- Cloudflare Turnstile with explicit light theme -->
+        <div class="cf-turnstile-wrapper">
+          <div
+            class="cf-turnstile"
+            data-sitekey="0x4AAAAAAD3oMjybecldeQb7"
+            data-theme="light"
+            data-callback="onTurnstileSuccess"
+            data-expired-callback="onTurnstileExpired"
+          ></div>
+        </div>
 
-        <button type="submit" id="btn-submit">Submit registration</button>
+        <button type="submit" id="btn-submit" class="atc-btn-submit">
+          <span>Submit registration</span>
+          <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </button>
         <p class="form-note" id="formNote"></p>
       </section>
 
     </form>
 
+    <!-- Success Confirmation State -->
     <section id="successPanel" class="success" hidden>
       <div class="mark" aria-hidden="true">
         <span class="mark-block b1"></span>
@@ -165,7 +202,18 @@
       </div>
       <h2>You're registered</h2>
       <p>A confirmation has been recorded for <strong id="ticket-name"></strong>.</p>
-      <p class="ticket-id" id="ticket-id"></p>
+      <div class="ticket-pill">
+        <span>REFERENCE ID:</span>
+        <span class="ticket-id" id="ticket-id"></span>
+      </div>
+      <div class="success-actions">
+        <button type="button" id="btn-reset" class="btn-reset">
+          <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+          </svg>
+          <span>Register another participant</span>
+        </button>
+      </div>
     </section>
 
   </main>
