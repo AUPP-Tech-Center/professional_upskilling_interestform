@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (window.turnstile && typeof window.turnstile.reset === 'function') {
         try {
           window.turnstile.reset();
-        } catch (_) {}
+        } catch (_) { }
       }
 
       // Restore submit button
@@ -270,12 +270,12 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Cloudflare Turnstile Callbacks
-window.onTurnstileSuccess = function() {
+window.onTurnstileSuccess = function () {
   const formNote = document.getElementById('formNote');
   if (formNote) formNote.textContent = '';
 };
 
-window.onTurnstileExpired = function() {
+window.onTurnstileExpired = function () {
   const formNote = document.getElementById('formNote');
   if (formNote) formNote.textContent = 'Security check expired. Please complete it again.';
 };
